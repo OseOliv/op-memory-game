@@ -20,8 +20,4 @@ export const GlobalStyle = createGlobalStyle`
   background-attachment: fixed;
   }
   
-  @media screen and (max-width: 750px) {
-  padding: 5px;
-  margin: 5px;
-
 `;
