@@ -66,5 +66,6 @@ gap: 10px;
 
 @media screen and (max-width: 750px) {
     grid-template-columns: repeat(3, 1fr);
+    margin: 10px;
   }
 `
