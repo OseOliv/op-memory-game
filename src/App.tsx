@@ -34,13 +34,13 @@ const App = () => {
     return () => clearInterval(timer);
   }, [playing, timeElapsed]);
 
-  // Verificar se os abertos sao iguais
+ 
   useEffect(() => {
     if (shownCount === 2) {
       let opened = gridItem.filter((item) => item.shown === true);
       if (opened.length === 2) {
         if (opened[0].item === opened[1].item) {
-          // 1 - Se iguais, tornalos permanentes
+         
           let tmpGrid = [...gridItem];
           for (let i in tmpGrid) {
             if (tmpGrid[i].shown) {
@@ -51,7 +51,7 @@ const App = () => {
             setShowCount(0);
           }
         } else {
-          // 2 - Se nao iguais, fecha todos os mostrados
+          
           setTimeout(() => {
             let tmpGrid = [...gridItem];
             for (let i in tmpGrid) {
@@ -67,7 +67,7 @@ const App = () => {
     }
   }, [shownCount, gridItem]);
 
-  //Verificar se o jogo acabou
+  
   useEffect(() => {
     if (
       moveCount > 0 &&
@@ -78,12 +78,11 @@ const App = () => {
   }, [moveCount, gridItem]);
 
   const resetAndCreateGrid = () => {
-    //Passo 1 - restar
+   
     setTimeElapsed(0);
     setMoveCount(0);
     setShowCount(0);
-    //Passo 2 - Criar o grid
-    //Passo 2.1 - criar um grid vazio
+   
     let tmpGrid: GriditemType[] = [];
     for (let i = 0; i < items.length * 2; i++) {
       tmpGrid.push({
@@ -92,7 +91,7 @@ const App = () => {
         permanentShown: false,
       });
     }
-    // 2.2 Preencher o grid
+ 
     for (let w = 0; w < 2; w++) {
       for (let i = 0; i < items.length; i++) {
         let pos = -1;
@@ -102,9 +101,9 @@ const App = () => {
         tmpGrid[pos].item = i;
       }
     }
-    //2.3 Jogar no state
+   
     setgridItem(tmpGrid);
-    //Passo 3 - comecar o jogo
+  
     setPlaying(true);
   };
 
