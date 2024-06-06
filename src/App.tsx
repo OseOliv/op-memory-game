@@ -59,7 +59,7 @@ const App = () => {
             }
             setgridItem(tmpGrid);
             setShowCount(0);
-          }, 1500);
+          }, 3000);
         }
 
         setMoveCount((moveCount) => moveCount + 1);
